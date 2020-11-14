@@ -11,7 +11,8 @@ docker build -t proxy:0.1 .
 docker run --rm --name proxy -p 8118:8118 -e PORT=83 -e IP=100.100.100.100 -d proxy:0.1
 ```
 
-#### 设置代理：通过设置linux变量来设置代理。
+#### 设置代理：
+通过设置linux变量来设置代理。
 ```console
 cat > proxy.sh <<EOF
 export PROXY_HOST=127.0.0.1
@@ -25,7 +26,8 @@ EOF
 source proxy.sh
 ```
 
-#### 取消代理：取消变量即可取消代理。
+#### 取消代理：
+取消变量即可取消代理。
 ```console
 cat > unproxy.sh <<EOF
 unset PROXY_HOST
