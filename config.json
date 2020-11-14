@@ -1,0 +1,63 @@
+{
+  "log": {
+    "loglevel": "warning",
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log"
+  },
+  "inbounds": [
+    {
+      "port": 1080,
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "100.100.100.100", // v2ray服务端地址
+            "port": 80, // 服务端端口
+            "users": [
+              {
+                "id": "4df59f08-d7b9-47e9-846e-3cbae53f1a96",
+                "alterId": 64
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {},
+      "tag": "direct" //如果要使用路由，这个 tag 是一定要有的，在这里 direct 就是 freedom 的一个标号，在路由中说 direct V2Ray 就知道是这里的 freedom 了
+    }    
+  ],
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "domain": ["geosite:cn"] // 中国大陆主流网站的域名
+      },
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "ip": [
+          "geoip:cn", // 中国大陆的 IP
+          "geoip:private" // 私有地址 IP，如路由器等
+        ]
+      }
+    ]
+  }
+}
