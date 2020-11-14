@@ -7,6 +7,7 @@ docker build -t proxy:0.1 .
 ```
 
 #### 运行镜像：
+这里注入到docker容器中的环境是你在公网安装v2ray服务端的IP和端口，-p选项中的8118端口是客户端http协议的代理端口。
 ```console
 docker run --rm --name proxy -p 8118:8118 -e PORT=83 -e IP=100.100.100.100 -d proxy:0.1
 ```
