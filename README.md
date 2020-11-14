@@ -1,5 +1,5 @@
 # v2ray-dockerfile
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;构建好的docker镜像运行v2ray和privoxy两个进程，将v2ray的VMess协议转换成http协议，可以直接在linux中设置 http_proxy=127.0.0.1:8118 变量来设置代理。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s使用此dockerfile构建好的docker镜像中会运行v2ray和privoxy两个进程，privoxy会将v2ray的VMess协议转换成http协议，可以直接在linux中设置 http_proxy=127.0.0.1:8118 变量来设置代理。
 
 #### 构建镜像：
 ```console
