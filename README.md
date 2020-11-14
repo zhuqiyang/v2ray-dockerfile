@@ -42,8 +42,8 @@ EOF
 source unproxy.sh
 ```
 
-#### 使用dockerhub上的镜像：
-使用dockerhub上已近准备好的镜像，直接执行下面命令即可。
+### 使用dockerhub上的镜像：
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或使用dockerhub上已近准备好的镜像，省去上面的步骤，直接执行下面命令即可。
 ```console
 docker pull zhuqiyang/v2ray:0.1
 docker run --name proxy -p 8118:8118 -e PORT=83 -e IP=100.100.100.100 -d zhuqiyang/v2ray:0.1
