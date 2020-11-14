@@ -38,5 +38,5 @@ unset https_proxy
 unset no_proxy
 EOF
 
-source proxy.sh
+source unproxy.sh
 ```
